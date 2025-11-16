@@ -1,4 +1,3 @@
-import bisect
 import utils
 
 
@@ -16,6 +15,7 @@ def part1(left, right):
   return total_difference
 
 
+# Calculate a similarity score between lists.
 def part2(left, right):
   similarity_score = 0
 

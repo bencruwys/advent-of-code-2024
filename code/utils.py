@@ -2,6 +2,7 @@ import bisect
 from pathlib import Path
 
 
+# Get input for a specified day.
 def get_input(day, remove_start_whitespace=False):
   day_string = "{:02}".format(day)
   filepath_string = f"inputs/day{day_string}.txt"
