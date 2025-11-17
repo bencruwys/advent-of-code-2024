@@ -2,12 +2,17 @@ import bisect
 from pathlib import Path
 
 
-# Get input for a specified day.
-def get_input_lines(day, remove_start_whitespace=False):
+def get_path_object(day):
   day_string = "{:02}".format(day)
   filepath_string = f"inputs/day{day_string}.txt"
-
   path = Path(filepath_string)
+  
+  return path
+
+
+# Get input for a specified day.
+def get_input_lines(day, remove_start_whitespace=False):
+  path = get_path_object(day)
   
   with open(path, "r") as file:
     raw_file_text = file.read()
@@ -32,3 +37,14 @@ def split_input_and_sort(data, delimiter=" "):
     right_list.insert(right_insertion_point, right_num)
 
   return left_list, right_list
+
+
+def get_entire_file(day, remove_start_whitespace=False):
+  path = get_path_object(day)
+
+  with open(path, "r") as file:
+    raw_file_text = file.read()
+    if remove_start_whitespace:
+      raw_file_text = raw_file_text.strip()
+  
+  return raw_file_text
