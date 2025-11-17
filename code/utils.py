@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 # Get input for a specified day.
-def get_input(day, remove_start_whitespace=False):
+def get_input_lines(day, remove_start_whitespace=False):
   day_string = "{:02}".format(day)
   filepath_string = f"inputs/day{day_string}.txt"
 
@@ -27,7 +27,7 @@ def split_input_and_sort(data, delimiter=" "):
     # Insert each value, keeping the list in order.
     left_insertion_point = bisect.bisect_left(left_list, left_num)
     left_list.insert(left_insertion_point, left_num)
-    
+
     right_insertion_point = bisect.bisect_left(right_list, right_num)
     right_list.insert(right_insertion_point, right_num)
 

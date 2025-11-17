@@ -26,7 +26,7 @@ def part2(left, right):
   return similarity_score
 
 
-data = utils.get_input(1)
+data = utils.get_input_lines(day=1)
 left, right = utils.split_input_and_sort(data, "   ")
 
 p1 = part1(left, right)
